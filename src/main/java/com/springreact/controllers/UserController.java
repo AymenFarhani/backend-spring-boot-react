@@ -36,7 +36,7 @@ public class UserController {
         User user = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
         return ResponseEntity.status(HttpStatus.OK).body(user);
     }
-
+ //update user by Id
     @PutMapping("/user/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User newUser) {
         userRepository.findById(id)
